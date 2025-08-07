@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>청소당번 뽑기</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- SweetAlert2 -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.1/dist/sweetalert2.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 min-h-screen">
+    <div class="container-fluid d-flex align-items-center justify-content-center min-vh-100 p-4">
+        <div class="card shadow-2xl border-0 rounded-4 overflow-hidden" style="max-width: 600px; width: 100%;">
+            <!-- Header -->
+            <div class="card-header bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-center py-4">
+                <h1 class="display-4 fw-bold mb-2">
+                    <i class="fas fa-broom me-3"></i>청소당번 뽑기
+                </h1>
+                <p class="lead mb-0 opacity-90">
+                    <i class="fas fa-users me-2"></i>1번부터 28번까지 중에서 4명을 랜덤으로 선택합니다
+                </p>
+            </div>
+            
+            <!-- Body -->
+            <div class="card-body p-5 bg-white">
+                <!-- Draw Button -->
+                <div class="text-center mb-4">
+                    <button id="drawButton" class="btn btn-lg btn-primary px-5 py-3 rounded-pill shadow-lg transition-all duration-300 hover:scale-105">
+                        <i class="fas fa-dice me-2"></i>
+                        <span class="fw-bold">청소당번 뽑기</span>
+                    </button>
+                </div>
+                
+                <!-- Loading Animation -->
+                <div id="loadingAnimation" class="text-center d-none">
+                    <div class="spinner-border text-primary mb-3" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p class="text-muted">당번을 선정하고 있습니다...</p>
+                </div>
+                
+                <!-- Result Container -->
+                <div id="result" class="result-container d-none">
+                    <div class="alert alert-success border-0 rounded-3 mb-4">
+                        <h4 class="alert-heading text-center mb-3">
+                            <i class="fas fa-star text-warning me-2"></i>
+                            선택된 청소당번
+                        </h4>
+                        <div id="selectedNumbers" class="d-flex justify-content-center flex-wrap gap-3"></div>
+                    </div>
+                </div>
+                
+                <!-- Reset Button -->
+                <div class="text-center">
+                    <button id="resetButton" class="btn btn-outline-secondary rounded-pill px-4 py-2 d-none">
+                        <i class="fas fa-redo me-2"></i>다시 뽑기
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <div class="card-footer bg-light text-center py-3">
+                <small class="text-muted">
+                    <i class="fas fa-info-circle me-1"></i>
+                    공정한 랜덤 선택으로 청소당번을 결정합니다
+                </small>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.1/dist/sweetalert2.all.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

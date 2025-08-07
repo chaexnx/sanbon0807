@@ -1,0 +1,281 @@
+/* Custom styles to enhance Bootstrap and Tailwind */
+:root {
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-secondary: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    --gradient-success: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--gradient-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+.container {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #4a5568;
+}
+
+.description {
+    font-size: 1.1em;
+    color: #718096;
+    margin-bottom: 30px;
+}
+
+/* Custom gradient backgrounds */
+.bg-gradient-primary {
+    background: var(--gradient-primary);
+}
+
+.bg-gradient-secondary {
+    background: var(--gradient-secondary);
+}
+
+.bg-gradient-success {
+    background: var(--gradient-success);
+}
+
+/* Enhanced button styles */
+.btn-primary {
+    background: var(--gradient-secondary);
+    border: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover {
+    background: var(--gradient-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+}
+
+/* Number badges */
+.number-badge {
+    width: 70px;
+    height: 70px;
+    background: var(--gradient-success);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 8px 20px rgba(79, 172, 254, 0.3);
+    transition: all 0.3s ease;
+    animation: bounceIn 0.6s ease;
+}
+
+.number-badge:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 30px rgba(79, 172, 254, 0.5);
+}
+
+/* Card enhancements */
+.card {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+/* Loading animation */
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Animations */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .number-badge {
+        width: 60px;
+        height: 60px;
+        font-size: 1.25rem;
+    }
+
+    .display-4 {
+        font-size: 2rem;
+    }
+}
+
+/* Custom SweetAlert2 styling */
+.swal2-popup {
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.swal2-title {
+    color: #4a5568;
+    font-weight: 600;
+}
+
+.swal2-confirm {
+    background: var(--gradient-secondary) !important;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 30px;
+    font-weight: 600;
+}
+
+.swal2-cancel {
+    border-radius: 25px;
+    padding: 10px 30px;
+    font-weight: 600;
+}
+
+/* Original styles that are still relevant and not explicitly overridden */
+.draw-button {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+.draw-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(255, 107, 107, 0.4);
+}
+
+.draw-button:active {
+    transform: translateY(0);
+}
+
+.result-container {
+    margin: 30px 0;
+    padding: 20px;
+    background: #f7fafc;
+    border-radius: 15px;
+    border: 2px dashed #e2e8f0;
+    display: none;
+}
+
+.result-container.show {
+    display: block;
+    animation: fadeInUp 0.5s ease;
+}
+
+.result-container h2 {
+    color: #4a5568;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.selected-numbers {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.number {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(79, 172, 254, 0.3);
+    animation: bounceIn 0.6s ease;
+}
+
+.reset-button {
+    background: #718096;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-size: 1em;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: none;
+}
+
+.reset-button.show {
+    display: inline-block;
+}
+
+.reset-button:hover {
+    background: #4a5568;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    .selected-numbers {
+        gap: 10px;
+    }
+    
+    .number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2em;
+    }
+}
